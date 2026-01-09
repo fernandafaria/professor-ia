@@ -19,12 +19,30 @@ export default function Header() {
           </div>
           <span className="logo-text">mano, traduz!</span>
         </div>
-        <button 
-          className="login-button"
-          onClick={() => router.push('/login')}
-        >
-          Entrar
-        </button>
+        
+        <nav className="header-nav">
+          <a href="#inicio" className="nav-link">início</a>
+          <a href="#features" className="nav-link">feature</a>
+          <a href="#precos" className="nav-link">preço</a>
+          <a href="#como-funciona" className="nav-link">como funciona</a>
+          <a href="#faq" className="nav-link">FAQ</a>
+          <a href="#contato" className="nav-link">contato</a>
+        </nav>
+
+        <div className="header-actions">
+          <button 
+            className="login-button"
+            onClick={() => router.push('/login')}
+          >
+            entrar
+          </button>
+          <button 
+            className="cta-button"
+            onClick={() => router.push('/onboarding')}
+          >
+            começar grátis
+          </button>
+        </div>
       </div>
 
       <style jsx>{`
@@ -42,6 +60,7 @@ export default function Header() {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          gap: 2rem;
         }
 
         .logo {
@@ -70,6 +89,31 @@ export default function Header() {
           text-transform: lowercase;
         }
 
+        .header-nav {
+          display: flex;
+          gap: 1.5rem;
+          align-items: center;
+        }
+
+        .nav-link {
+          color: white;
+          text-decoration: none;
+          font-size: 0.875rem;
+          font-weight: 500;
+          transition: opacity 0.2s;
+          text-transform: lowercase;
+        }
+
+        .nav-link:hover {
+          opacity: 0.8;
+        }
+
+        .header-actions {
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+        }
+
         .login-button {
           background: transparent;
           border: none;
@@ -80,10 +124,35 @@ export default function Header() {
           padding: 0.5rem 1rem;
           border-radius: 6px;
           transition: background-color 0.2s;
+          text-transform: lowercase;
         }
 
         .login-button:hover {
           background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .cta-button {
+          background: #FF6B35;
+          border: none;
+          color: white;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          padding: 0.5rem 1.5rem;
+          border-radius: 6px;
+          transition: all 0.2s;
+          text-transform: lowercase;
+        }
+
+        .cta-button:hover {
+          background: #FF5722;
+          transform: translateY(-1px);
+        }
+
+        @media (max-width: 968px) {
+          .header-nav {
+            display: none;
+          }
         }
 
         @media (max-width: 768px) {
@@ -99,6 +168,15 @@ export default function Header() {
             width: 32px;
             height: 32px;
             font-size: 1.25rem;
+          }
+
+          .header-actions {
+            gap: 0.5rem;
+          }
+
+          .cta-button {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
           }
         }
       `}</style>

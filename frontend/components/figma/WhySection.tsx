@@ -28,22 +28,22 @@ export default function WhySection() {
     {
       iconColor: '#7C3AED',
       title: 'Personalização total',
-      description: 'Matemática com assuntos do dia a dia, física com futebol, química com K-pop. Tu escolhe!',
+      description: 'Matemática com exemplos de Fortnite, física com futebol, química com K-pop. Tu escolhe!',
     },
     {
       iconColor: '#FF6B35',
       title: 'Tradução instantânea',
-      description: 'Fórmulas complexas viram exemplos simples. Conceitos abstratos viram exemplos reais.',
+      description: 'Aulas complexas viram exemplos simples. Conceitos abstratos viram situações reais.',
     },
     {
       iconColor: '#2563EB',
       title: 'Vira um game',
-      description: 'Ganhe XP, suba de nível, desbloqueie bônus diários e crie seu mundo virtual.',
+      description: 'Ganhe XP, suba de nível, desbloqueie badges épicos e monte suas streaks.',
     },
     {
       iconColor: '#16A34A',
       title: 'Feito pra todo mundo',
-      description: 'Inclusivo: acessível, disponível em desktop/mobile, rápido, fácil, intuitivo.',
+      description: 'Interface adaptável, explicações personalizadas, suporte pra neurodivergências.',
     },
   ];
 
@@ -53,6 +53,9 @@ export default function WhySection() {
         <h2 className="section-title">
           Por que você vai amar estudar aqui?
         </h2>
+        <p className="section-subtitle">
+          Seu professor, suas regras. Aprende do jeito que funciona pra ti!
+        </p>
         <div className="features-grid">
           {features.map((feature, index) => (
             <Feature
@@ -80,6 +83,13 @@ export default function WhySection() {
           font-size: 2.5rem;
           font-weight: 700;
           color: #1a1a1a;
+          text-align: center;
+          margin: 0 0 1rem 0;
+        }
+
+        .section-subtitle {
+          font-size: 1.125rem;
+          color: #666;
           text-align: center;
           margin: 0 0 4rem 0;
         }

@@ -24,7 +24,7 @@ export default function FinalCTA() {
           Pronto pra entender de verdade?
         </h2>
         <p className="cta-description">
-          Começa agora mesmo e traduz qualquer dúvida em explicações que fazem sentido pra você!
+          Começa grátis, sem cartão de crédito. É só criar teu Mano e já começar a mandar bem!
         </p>
         <button
           className="cta-button"

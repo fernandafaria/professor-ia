@@ -28,20 +28,16 @@ export default function HeroSection() {
     <section className="hero-section">
       <div className="hero-container">
         <div className="hero-content">
-          {/* Tag Amarela */}
-          <div className="yellow-tag">
-            Traduzir o que você não entende de forma interativa
-          </div>
+          {/* Tag Amarela - removida no novo design, mantendo espaço para possíveis badges */}
 
           {/* Título Principal */}
           <h1 className="hero-title">
-            Aprende do jeito que tu entende
+            prof que explica do jeito que tu entende
           </h1>
 
           {/* Descrição */}
           <p className="hero-description">
-            Aprenda do seu jeito! Explica aí com exemplos dos seus interesses, 
-            da sua realidade e tudo mais que faz sentido pra você!
+            Explicações personalizadas com exemplos dos teus interesses. Matemática virou game, química virou K-pop
           </p>
 
           {/* Botões CTA */}

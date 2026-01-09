@@ -14,7 +14,7 @@ export default function ComoFuncionaSection() {
           <div className="section-label">COMO FUNCIONA</div>
           <h2 className="section-title">Tradução em 3 passos</h2>
           <p className="section-description">
-            Traduzimos qualquer conteúdo complexo para a linguagem que você realmente entende
+            Do professorês pro teu idioma em segundos
           </p>
         </div>
 
@@ -32,7 +32,7 @@ export default function ComoFuncionaSection() {
               </div>
               <h3 className="step-title">Conta tua dúvida</h3>
               <p className="step-description">
-                Manda a pergunta do que tu não sabe. Pode ser foto, áudio, texto... como quiser!
+                Manda a pergunta do jeito que tu sabe. Pode ser foto, texto, áudio... como quiser!
               </p>
             </div>
           </div>
@@ -48,7 +48,7 @@ export default function ComoFuncionaSection() {
               </div>
               <h3 className="step-title">mano traduz</h3>
               <p className="step-description">
-                A IA gera sua explicação clara e bonitinha em algo que tu entende de verdade.
+                A IA pega aquela explicação chata e transforma em algo que tu entende de verdade.
               </p>
             </div>
           </div>
@@ -64,7 +64,7 @@ export default function ComoFuncionaSection() {
               </div>
               <h3 className="step-title">Tu entende</h3>
               <p className="step-description">
-                Pronto! Agora faz sentido e tu ainda ganha XP pra subir de nível!
+                Pronto! Agora faz sentido. E tu ainda ganha XP pra subir de nível.
               </p>
             </div>
           </div>
