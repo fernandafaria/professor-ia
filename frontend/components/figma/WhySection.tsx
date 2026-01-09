@@ -13,14 +13,12 @@ interface FeatureProps {
 
 function Feature({ iconColor, title, description }: FeatureProps) {
   return (
-    <div className="feature-item">
-      <div className="feature-icon-box" style={{ backgroundColor: iconColor }}>
+    <div className="feature-card">
+      <div className="feature-icon" style={{ backgroundColor: iconColor }}>
         <div className="icon-square"></div>
       </div>
-      <div className="feature-content">
-        <h3 className="feature-title">{title}</h3>
-        <p className="feature-description">{description}</p>
-      </div>
+      <h3 className="feature-title">{title}</h3>
+      <p className="feature-description">{description}</p>
     </div>
   );
 }
@@ -28,34 +26,34 @@ function Feature({ iconColor, title, description }: FeatureProps) {
 export default function WhySection() {
   const features = [
     {
-      iconColor: '#8B5CF6',
+      iconColor: '#7C3AED',
       title: 'Personalização total',
-      description: 'Matemática com assuntos do dia a dia, física com futebol, química com k-pop. Tu escolhe!'
+      description: 'Matemática com assuntos do dia a dia, física com futebol, química com K-pop. Tu escolhe!',
     },
     {
-      iconColor: '#FF7043',
+      iconColor: '#FF6B35',
       title: 'Tradução instantânea',
-      description: 'Formula complexas viram exemplos simples. Conceitos abstratos viram simples mas...'
+      description: 'Fórmulas complexas viram exemplos simples. Conceitos abstratos viram exemplos reais.',
     },
     {
-      iconColor: '#42A5F5',
+      iconColor: '#2563EB',
       title: 'Vira um game',
-      description: 'Ganhe XP, suba de nível, desbloqueie bônus, skins e conteúdo exclusivo.'
+      description: 'Ganhe XP, suba de nível, desbloqueie bônus diários e crie seu mundo virtual.',
     },
     {
-      iconColor: '#66BB6A',
+      iconColor: '#16A34A',
       title: 'Feito pra todo mundo',
-      description: 'Ensino inclusivo, para todas as deficiências, idades e neurodivergências.'
-    }
+      description: 'Inclusivo: acessível, disponível em desktop/mobile, rápido, fácil, intuitivo.',
+    },
   ];
 
   return (
     <section className="why-section">
-      <div className="container">
+      <div className="why-container">
         <h2 className="section-title">
           Por que você vai amar estudar aqui?
         </h2>
-        <div className="features-list">
+        <div className="features-grid">
           {features.map((feature, index) => (
             <Feature
               key={index}
@@ -70,10 +68,10 @@ export default function WhySection() {
       <style jsx>{`
         .why-section {
           background: white;
-          padding: 5rem 2rem;
+          padding: 6rem 2rem;
         }
 
-        .container {
+        .why-container {
           max-width: 1200px;
           margin: 0 auto;
         }
@@ -86,44 +84,40 @@ export default function WhySection() {
           margin: 0 0 4rem 0;
         }
 
-        .features-list {
+        .features-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+        }
+
+        .feature-card {
           display: flex;
           flex-direction: column;
-          gap: 2.5rem;
+          gap: 1rem;
         }
 
-        .feature-item {
-          display: flex;
-          align-items: flex-start;
-          gap: 1.5rem;
-        }
-
-        .feature-icon-box {
+        .feature-icon {
           width: 48px;
           height: 48px;
           border-radius: 8px;
           display: flex;
           align-items: center;
           justify-content: center;
-          flex-shrink: 0;
         }
 
         .icon-square {
           width: 24px;
           height: 24px;
-          background: rgba(255, 255, 255, 0.9);
+          background: white;
           border-radius: 4px;
-        }
-
-        .feature-content {
-          flex: 1;
         }
 
         .feature-title {
           font-size: 1.5rem;
           font-weight: 700;
           color: #1a1a1a;
-          margin: 0 0 0.5rem 0;
+          margin: 0;
+          text-transform: lowercase;
         }
 
         .feature-description {
@@ -135,30 +129,16 @@ export default function WhySection() {
 
         @media (max-width: 768px) {
           .why-section {
-            padding: 3rem 1.5rem;
+            padding: 4rem 1.5rem;
           }
 
           .section-title {
             font-size: 2rem;
-            margin-bottom: 3rem;
           }
 
-          .features-list {
+          .features-grid {
+            grid-template-columns: 1fr;
             gap: 2rem;
-          }
-
-          .feature-item {
-            flex-direction: column;
-            gap: 1rem;
-          }
-
-          .feature-icon-box {
-            width: 40px;
-            height: 40px;
-          }
-
-          .feature-title {
-            font-size: 1.25rem;
           }
         }
       `}</style>

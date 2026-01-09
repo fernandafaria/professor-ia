@@ -5,73 +5,84 @@
 
 'use client';
 
+import { useState } from 'react';
+
 export default function Footer() {
+  const [email, setEmail] = useState('');
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // TODO: Implementar newsletter
+    console.log('Newsletter:', email);
+    setEmail('');
+  };
+
   return (
     <footer className="footer">
       <div className="footer-content">
-        <div className="footer-main">
-          <div className="footer-brand">
-            <div className="logo">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="12" cy="12" r="10" fill="white"/>
-                <text x="12" y="16" fontSize="12" fontWeight="bold" fill="#8B5CF6" textAnchor="middle">D</text>
-              </svg>
-              <span className="brand-name">mano, traduz!</span>
-            </div>
-            <p className="brand-description">
-              PROJETO QUE ACREDITA em um jeito diferente para mudar o estudo do mundo.
+        {/* Brand */}
+        <div className="footer-brand">
+          <div className="logo-icon">
+            <span>D</span>
+          </div>
+          <div className="brand-info">
+            <span className="brand-name">mano, traduz!</span>
+            <p className="brand-tagline">
+              PROJETO QUE ACOMPANHA EM UM JEITO DIFERENTE PARA AJUDAR VOCÊ A APRENDER!
             </p>
           </div>
+        </div>
 
-          <div className="footer-links">
-            <div className="links-column">
-              <h4 className="links-title">produto</h4>
-              <ul className="links-list">
-                <li><a href="#recursos">Recursos</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#comunidade">Comunidade</a></li>
-              </ul>
-            </div>
-
-            <div className="links-column">
-              <h4 className="suporte">suporte</h4>
-              <ul className="links-list">
-                <li><a href="#duvidas">Dúvidas frequentes</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="#status">Status</a></li>
-              </ul>
-            </div>
+        {/* Links */}
+        <div className="footer-links">
+          <div className="links-column">
+            <h3 className="links-title">produto</h3>
+            <ul className="links-list">
+              <li><a href="#features">features</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#comunidade">comunidade</a></li>
+            </ul>
           </div>
-
-          <div className="newsletter">
-            <h4 className="newsletter-title">Newsletter</h4>
-            <div className="newsletter-input">
-              <input 
-                type="email" 
-                placeholder="receba dicas de estudo"
-                className="newsletter-field"
-              />
-              <button className="newsletter-button">→</button>
-            </div>
+          <div className="links-column">
+            <h3 className="links-title">suporte</h3>
+            <ul className="links-list">
+              <li><a href="#faq">perguntas frequentes</a></li>
+              <li><a href="#contato">contato</a></li>
+              <li><a href="#ajuda">ajuda</a></li>
+            </ul>
           </div>
         </div>
 
-        <div className="footer-bottom">
-          <p className="copyright">
-            © 2024 mano traduz! Todos os direitos reservados.
-          </p>
+        {/* Newsletter */}
+        <div className="footer-newsletter">
+          <h3 className="newsletter-title">newsletter</h3>
+          <p className="newsletter-subtitle">receba dicas de estudo</p>
+          <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
+            <input
+              type="email"
+              placeholder="Seu e-mail"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="newsletter-input"
+              required
+            />
+            <button type="submit" className="newsletter-button">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M2.01 21L23 12L2.01 3L2 10L17 12L2 14L2.01 21Z" fill="white"/>
+              </svg>
+            </button>
+          </form>
         </div>
+      </div>
+
+      {/* Copyright */}
+      <div className="footer-copyright">
+        <p>© 2024 mano traduz! Todos os direitos reservados.</p>
       </div>
 
       <style jsx>{`
         .footer {
-          background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+          background: linear-gradient(135deg, #5B21B6 0%, #4C1D95 100%);
           color: white;
           padding: 4rem 2rem 2rem;
         }
@@ -79,12 +90,9 @@ export default function Footer() {
         .footer-content {
           max-width: 1200px;
           margin: 0 auto;
-        }
-
-        .footer-main {
           display: grid;
-          grid-template-columns: 2fr 1fr 1fr;
-          gap: 3rem;
+          grid-template-columns: 1.5fr 1fr 1fr;
+          gap: 4rem;
           margin-bottom: 3rem;
         }
 
@@ -94,21 +102,29 @@ export default function Footer() {
           gap: 1rem;
         }
 
-        .logo {
+        .logo-icon {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          background: white;
           display: flex;
           align-items: center;
-          gap: 0.75rem;
+          justify-content: center;
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #7C3AED;
           margin-bottom: 0.5rem;
         }
 
         .brand-name {
-          font-size: 1.25rem;
+          font-size: 1.5rem;
           font-weight: 600;
-          color: white;
-          font-style: italic;
+          display: block;
+          margin-bottom: 0.5rem;
+          text-transform: lowercase;
         }
 
-        .brand-description {
+        .brand-tagline {
           font-size: 0.875rem;
           color: rgba(255, 255, 255, 0.9);
           line-height: 1.5;
@@ -116,8 +132,9 @@ export default function Footer() {
         }
 
         .footer-links {
-          display: flex;
-          gap: 3rem;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
         }
 
         .links-column {
@@ -127,11 +144,10 @@ export default function Footer() {
         }
 
         .links-title {
-          font-size: 0.875rem;
+          font-size: 1rem;
           font-weight: 600;
-          text-transform: uppercase;
-          margin: 0 0 0.5rem 0;
-          color: white;
+          margin: 0;
+          text-transform: lowercase;
         }
 
         .links-list {
@@ -140,40 +156,48 @@ export default function Footer() {
           margin: 0;
           display: flex;
           flex-direction: column;
-          gap: 0.5rem;
+          gap: 0.75rem;
         }
 
-        .links-list li a {
+        .links-list a {
           color: rgba(255, 255, 255, 0.8);
           text-decoration: none;
           font-size: 0.875rem;
           transition: color 0.2s;
+          text-transform: lowercase;
         }
 
-        .links-list li a:hover {
+        .links-list a:hover {
           color: white;
         }
 
-        .newsletter {
+        .footer-newsletter {
           display: flex;
           flex-direction: column;
-          gap: 1rem;
+          gap: 0.75rem;
         }
 
         .newsletter-title {
-          font-size: 0.875rem;
+          font-size: 1rem;
           font-weight: 600;
-          text-transform: uppercase;
           margin: 0;
-          color: white;
+          text-transform: lowercase;
+        }
+
+        .newsletter-subtitle {
+          font-size: 0.875rem;
+          color: rgba(255, 255, 255, 0.8);
+          margin: 0;
+          text-transform: lowercase;
+        }
+
+        .newsletter-form {
+          display: flex;
+          gap: 0.5rem;
+          margin-top: 0.5rem;
         }
 
         .newsletter-input {
-          display: flex;
-          gap: 0.5rem;
-        }
-
-        .newsletter-field {
           flex: 1;
           padding: 0.75rem 1rem;
           border: 1px solid rgba(255, 255, 255, 0.3);
@@ -183,62 +207,68 @@ export default function Footer() {
           font-size: 0.875rem;
         }
 
-        .newsletter-field::placeholder {
+        .newsletter-input::placeholder {
           color: rgba(255, 255, 255, 0.6);
         }
 
-        .newsletter-field:focus {
+        .newsletter-input:focus {
           outline: none;
-          border-color: rgba(255, 255, 255, 0.5);
+          border-color: white;
           background: rgba(255, 255, 255, 0.15);
         }
 
         .newsletter-button {
-          background: white;
-          color: #8B5CF6;
+          background: #7C3AED;
           border: none;
-          padding: 0.75rem 1.25rem;
+          padding: 0.75rem 1rem;
           border-radius: 8px;
-          font-size: 1.25rem;
-          font-weight: 600;
           cursor: pointer;
-          transition: all 0.2s;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.2s;
         }
 
         .newsletter-button:hover {
-          background: rgba(255, 255, 255, 0.9);
-          transform: translateX(2px);
+          background: #8B5CF6;
         }
 
-        .footer-bottom {
-          border-top: 1px solid rgba(255, 255, 255, 0.2);
+        .footer-copyright {
+          max-width: 1200px;
+          margin: 0 auto;
           padding-top: 2rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+          text-align: center;
         }
 
-        .copyright {
-          font-size: 0.75rem;
+        .footer-copyright p {
+          font-size: 0.875rem;
           color: rgba(255, 255, 255, 0.7);
-          text-align: center;
           margin: 0;
         }
 
         @media (max-width: 968px) {
-          .footer-main {
+          .footer-content {
             grid-template-columns: 1fr;
-            gap: 2.5rem;
+            gap: 3rem;
           }
 
           .footer-links {
-            gap: 2rem;
+            grid-template-columns: 1fr 1fr;
           }
         }
 
         @media (max-width: 768px) {
           .footer {
-            padding: 3rem 1.5rem 1.5rem;
+            padding: 3rem 1.5rem 2rem;
           }
 
-          .newsletter-input {
+          .footer-links {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+
+          .newsletter-form {
             flex-direction: column;
           }
 

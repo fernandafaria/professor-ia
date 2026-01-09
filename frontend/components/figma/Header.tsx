@@ -14,16 +14,9 @@ export default function Header() {
     <header className="header">
       <div className="header-content">
         <div className="logo">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="12" cy="12" r="10" fill="#8B5CF6"/>
-            <text x="12" y="16" fontSize="12" fontWeight="bold" fill="white" textAnchor="middle">D</text>
-          </svg>
+          <div className="logo-icon">
+            <span>D</span>
+          </div>
           <span className="logo-text">mano, traduz!</span>
         </div>
         <button 
@@ -36,7 +29,7 @@ export default function Header() {
 
       <style jsx>{`
         .header {
-          background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+          background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
           padding: 1.5rem 2rem;
           position: sticky;
           top: 0;
@@ -57,15 +50,24 @@ export default function Header() {
           gap: 0.75rem;
         }
 
-        .logo svg {
-          flex-shrink: 0;
+        .logo-icon {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #7C3AED;
         }
 
         .logo-text {
           font-size: 1.25rem;
           font-weight: 600;
           color: white;
-          font-style: italic;
+          text-transform: lowercase;
         }
 
         .login-button {
@@ -73,7 +75,7 @@ export default function Header() {
           border: none;
           color: white;
           font-size: 1rem;
-          font-weight: 500;
+          font-weight: 600;
           cursor: pointer;
           padding: 0.5rem 1rem;
           border-radius: 6px;
@@ -91,6 +93,12 @@ export default function Header() {
 
           .logo-text {
             font-size: 1.125rem;
+          }
+
+          .logo-icon {
+            width: 32px;
+            height: 32px;
+            font-size: 1.25rem;
           }
         }
       `}</style>

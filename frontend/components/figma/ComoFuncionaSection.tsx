@@ -6,53 +6,75 @@
 'use client';
 
 export default function ComoFuncionaSection() {
-  const steps = [
-    {
-      number: 1,
-      icon: '💬',
-      title: 'Conta tua dúvida',
-      description: 'Manda a pergunta ou o problema que tu não sabe. Pode ser foto, audio, texto... como quiser!'
-    },
-    {
-      number: 2,
-      icon: '⚡',
-      title: 'mano traduz',
-      description: 'A IA gera exato a explicação clara e bondosa em algo que tu entende de verdade.'
-    },
-    {
-      number: 3,
-      icon: '🏆',
-      title: 'Tu entende',
-      description: 'Pronto! Agora faz sentido e tu ainda ganha XP e sobe de nível!'
-    }
-  ];
-
   return (
     <section id="como-funciona" className="como-funciona-section">
       <div className="container">
+        {/* Header */}
         <div className="section-header">
-          <p className="section-label">COMO FUNCIONA</p>
+          <div className="section-label">COMO FUNCIONA</div>
           <h2 className="section-title">Tradução em 3 passos</h2>
+          <p className="section-description">
+            Traduzimos qualquer conteúdo complexo para a linguagem que você realmente entende
+          </p>
         </div>
 
+        {/* Steps */}
         <div className="steps-grid">
-          {steps.map((step) => (
-            <div key={step.number} className="step-card">
-              <div className="step-number">{step.number}</div>
-              <div className="step-content">
-                <div className="step-icon">{step.icon}</div>
-                <h3 className="step-title">{step.title}</h3>
-                <p className="step-description">{step.description}</p>
+          {/* Step 1 */}
+          <div className="step-item">
+            <div className="step-number">1</div>
+            <div className="step-card">
+              <div className="step-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H6L4 18V4H20V16Z" fill="#7C3AED"/>
+                  <path d="M7 9H17V11H7V9ZM7 12H15V14H7V12ZM7 6H17V8H7V6Z" fill="#7C3AED"/>
+                </svg>
               </div>
+              <h3 className="step-title">Conta tua dúvida</h3>
+              <p className="step-description">
+                Manda a pergunta do que tu não sabe. Pode ser foto, áudio, texto... como quiser!
+              </p>
             </div>
-          ))}
+          </div>
+
+          {/* Step 2 */}
+          <div className="step-item">
+            <div className="step-number">2</div>
+            <div className="step-card">
+              <div className="step-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                  <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#7C3AED"/>
+                </svg>
+              </div>
+              <h3 className="step-title">mano traduz</h3>
+              <p className="step-description">
+                A IA gera sua explicação clara e bonitinha em algo que tu entende de verdade.
+              </p>
+            </div>
+          </div>
+
+          {/* Step 3 */}
+          <div className="step-item">
+            <div className="step-number">3</div>
+            <div className="step-card">
+              <div className="step-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#7C3AED"/>
+                </svg>
+              </div>
+              <h3 className="step-title">Tu entende</h3>
+              <p className="step-description">
+                Pronto! Agora faz sentido e tu ainda ganha XP pra subir de nível!
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
       <style jsx>{`
         .como-funciona-section {
           background: white;
-          padding: 5rem 2rem;
+          padding: 6rem 2rem;
         }
 
         .container {
@@ -67,60 +89,71 @@ export default function ComoFuncionaSection() {
 
         .section-label {
           font-size: 0.875rem;
-          font-weight: 600;
-          color: #666;
+          color: #999;
           text-transform: uppercase;
-          letter-spacing: 0.05em;
-          margin: 0 0 0.5rem 0;
+          letter-spacing: 1px;
+          margin-bottom: 0.5rem;
         }
 
         .section-title {
-          font-size: 2.5rem;
+          font-size: 3rem;
           font-weight: 700;
           color: #1a1a1a;
+          margin: 0 0 1rem 0;
+          text-transform: lowercase;
+        }
+
+        .section-description {
+          font-size: 1.125rem;
+          color: #666;
           margin: 0;
+          max-width: 600px;
+          margin: 0 auto;
         }
 
         .steps-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 2rem;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 3rem;
         }
 
-        .step-card {
-          position: relative;
-          background: white;
-          border-radius: 16px;
-          padding: 2rem;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        .step-item {
           display: flex;
-          gap: 1.5rem;
+          flex-direction: column;
+          align-items: flex-start;
+          position: relative;
         }
 
         .step-number {
-          position: absolute;
-          left: -20px;
-          top: 2rem;
-          width: 40px;
-          height: 40px;
-          background: #FF7043;
-          color: white;
+          width: 48px;
+          height: 48px;
           border-radius: 50%;
+          background: #FF6B35;
+          color: white;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 1.25rem;
+          font-size: 1.5rem;
           font-weight: 700;
-          flex-shrink: 0;
+          margin-bottom: 1rem;
         }
 
-        .step-content {
+        .step-card {
+          background: white;
+          border: 1px solid #e5e5e5;
+          border-radius: 16px;
+          padding: 2rem;
           flex: 1;
-          margin-left: 1rem;
+          width: 100%;
+          transition: all 0.3s;
+        }
+
+        .step-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         }
 
         .step-icon {
-          font-size: 2rem;
           margin-bottom: 1rem;
         }
 
@@ -129,6 +162,7 @@ export default function ComoFuncionaSection() {
           font-weight: 700;
           color: #1a1a1a;
           margin: 0 0 0.75rem 0;
+          text-transform: lowercase;
         }
 
         .step-description {
@@ -138,25 +172,37 @@ export default function ComoFuncionaSection() {
           margin: 0;
         }
 
+        @media (max-width: 968px) {
+          .steps-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+
+          .step-item {
+            flex-direction: row;
+            gap: 1.5rem;
+          }
+
+          .step-number {
+            flex-shrink: 0;
+          }
+
+          .section-title {
+            font-size: 2.5rem;
+          }
+        }
+
         @media (max-width: 768px) {
           .como-funciona-section {
-            padding: 3rem 1.5rem;
+            padding: 4rem 1.5rem;
           }
 
           .section-title {
             font-size: 2rem;
           }
 
-          .steps-grid {
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
-          }
-
-          .step-number {
-            left: -15px;
-            width: 35px;
-            height: 35px;
-            font-size: 1.125rem;
+          .step-item {
+            flex-direction: column;
           }
         }
       `}</style>

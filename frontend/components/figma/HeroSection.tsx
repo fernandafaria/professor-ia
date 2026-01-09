@@ -28,9 +28,9 @@ export default function HeroSection() {
     <section className="hero-section">
       <div className="hero-container">
         <div className="hero-content">
-          {/* Tagline */}
-          <div className="tagline-badge">
-            Traduzir o que ninguem te da para aprender.
+          {/* Tag Amarela */}
+          <div className="yellow-tag">
+            Traduzir o que você não entende de forma interativa
           </div>
 
           {/* Título Principal */}
@@ -40,8 +40,8 @@ export default function HeroSection() {
 
           {/* Descrição */}
           <p className="hero-description">
-            compara textos gigantes, dúvidas complexas, moderniza a linguagem, 
-            simplifica o que parecia complicado
+            Aprenda do seu jeito! Explica aí com exemplos dos seus interesses, 
+            da sua realidade e tudo mais que faz sentido pra você!
           </p>
 
           {/* Botões CTA */}
@@ -51,7 +51,7 @@ export default function HeroSection() {
               onClick={handleStart}
               disabled={loading}
             >
-              começar gratis
+              {loading ? 'Carregando...' : 'começar grátis'}
             </button>
             <button
               className="cta-secondary"
@@ -64,13 +64,22 @@ export default function HeroSection() {
           {/* Feature Tags */}
           <div className="feature-tags">
             <div className="tag">
-              100% gratuito
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+              </svg>
+              XP na aula
             </div>
             <div className="tag">
-              Foco no Código
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor"/>
+              </svg>
+              Pontos XP
             </div>
             <div className="tag">
-              Receba certificado
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z" fill="currentColor"/>
+              </svg>
+              Resultados
             </div>
           </div>
         </div>
@@ -78,11 +87,13 @@ export default function HeroSection() {
 
       <style jsx>{`
         .hero-section {
-          background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
-          padding: 4rem 2rem;
-          min-height: 70vh;
+          background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
+          padding: 4rem 2rem 6rem;
+          min-height: 600px;
           display: flex;
           align-items: center;
+          position: relative;
+          overflow: hidden;
         }
 
         .hero-container {
@@ -92,22 +103,23 @@ export default function HeroSection() {
         }
 
         .hero-content {
-          max-width: 800px;
           display: flex;
           flex-direction: column;
-          gap: 2rem;
+          gap: 1.5rem;
+          max-width: 700px;
         }
 
-        .tagline-badge {
+        .yellow-tag {
           display: inline-flex;
           align-items: center;
-          background: #FFA726;
+          background: #FFC107;
           color: #1a1a1a;
-          padding: 0.625rem 1.25rem;
-          border-radius: 30px;
+          padding: 0.5rem 1rem;
+          border-radius: 24px;
           font-size: 0.875rem;
-          font-weight: 500;
+          font-weight: 600;
           width: fit-content;
+          text-transform: lowercase;
         }
 
         .hero-title {
@@ -116,10 +128,11 @@ export default function HeroSection() {
           color: white;
           line-height: 1.1;
           margin: 0;
+          text-transform: lowercase;
         }
 
         .hero-description {
-          font-size: 1.25rem;
+          font-size: 1.125rem;
           color: rgba(255, 255, 255, 0.9);
           line-height: 1.6;
           margin: 0;
@@ -129,10 +142,11 @@ export default function HeroSection() {
           display: flex;
           gap: 1rem;
           flex-wrap: wrap;
+          margin-top: 0.5rem;
         }
 
         .cta-primary {
-          background: #FF7043;
+          background: #FF6B35;
           color: white;
           border: none;
           padding: 1rem 2rem;
@@ -141,12 +155,13 @@ export default function HeroSection() {
           font-weight: 600;
           cursor: pointer;
           transition: all 0.2s;
+          text-transform: lowercase;
         }
 
         .cta-primary:hover:not(:disabled) {
           background: #FF5722;
           transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(255, 112, 67, 0.4);
+          box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
         }
 
         .cta-primary:disabled {
@@ -155,8 +170,8 @@ export default function HeroSection() {
         }
 
         .cta-secondary {
-          background: white;
-          color: #8B5CF6;
+          background: transparent;
+          color: white;
           border: 2px solid white;
           padding: 1rem 2rem;
           border-radius: 12px;
@@ -164,15 +179,16 @@ export default function HeroSection() {
           font-weight: 600;
           cursor: pointer;
           transition: all 0.2s;
+          text-transform: lowercase;
         }
 
         .cta-secondary:hover {
-          background: rgba(255, 255, 255, 0.9);
+          background: rgba(255, 255, 255, 0.1);
         }
 
         .feature-tags {
           display: flex;
-          gap: 1rem;
+          gap: 0.75rem;
           flex-wrap: wrap;
           margin-top: 1rem;
         }
@@ -180,29 +196,26 @@ export default function HeroSection() {
         .tag {
           display: inline-flex;
           align-items: center;
-          background: white;
-          color: #8B5CF6;
-          border: 1px solid #8B5CF6;
-          padding: 0.625rem 1.25rem;
-          border-radius: 30px;
+          gap: 0.5rem;
+          padding: 0.5rem 1rem;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          border-radius: 24px;
           font-size: 0.875rem;
           font-weight: 500;
+          color: white;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
         }
 
         @media (max-width: 968px) {
           .hero-title {
             font-size: 3rem;
           }
-
-          .hero-description {
-            font-size: 1.125rem;
-          }
         }
 
         @media (max-width: 768px) {
           .hero-section {
-            padding: 3rem 1.5rem;
-            min-height: 60vh;
+            padding: 2rem 1.5rem 4rem;
           }
 
           .hero-title {
@@ -220,11 +233,6 @@ export default function HeroSection() {
           .cta-primary,
           .cta-secondary {
             width: 100%;
-          }
-
-          .feature-tags {
-            flex-direction: column;
-            gap: 0.75rem;
           }
         }
       `}</style>
