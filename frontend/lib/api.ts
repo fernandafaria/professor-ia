@@ -35,7 +35,7 @@ class ApiClient {
     const { method = 'GET', headers = {}, body } = options;
 
     const token = this.getAuthToken();
-    const authHeaders = token
+    const authHeaders: Record<string, string> = token
       ? { Authorization: `Bearer ${token}` }
       : {};
 
@@ -97,55 +97,58 @@ class ApiClient {
     );
   }
 
-  async getCurrentUser() {
-    return this.request('/api/v1/auth/me');
+  async getCurrentUser(): Promise<{ id: string; email: string; name: string }> {
+    return this.request<{ id: string; email: string; name: string }>('/api/v1/auth/me');
   }
 
   // Profile endpoints
-  async getProfiles() {
-    return this.request('/api/v1/profile');
+  async getProfiles(): Promise<any[]> {
+    const result = await this.request<any[]>('/api/v1/profile');
+    return Array.isArray(result) ? result : [];
   }
 
-  async createProfile(data: any) {
-    return this.request('/api/v1/profile', {
+  async createProfile(data: any): Promise<{ id: string; name: string; subject?: string; grade?: string }> {
+    return this.request<{ id: string; name: string; subject?: string; grade?: string }>('/api/v1/profile', {
       method: 'POST',
       body: data,
     });
   }
 
-  async updateProfile(id: string, data: any) {
-    return this.request(`/api/v1/profile/${id}`, {
+  async updateProfile(id: string, data: any): Promise<{ id: string; name: string; subject?: string; grade?: string }> {
+    return this.request<{ id: string; name: string; subject?: string; grade?: string }>(`/api/v1/profile/${id}`, {
       method: 'PUT',
       body: data,
     });
   }
 
   // Conversation endpoints
-  async getConversations() {
-    return this.request('/api/v1/conversations');
+  async getConversations(): Promise<any[]> {
+    const result = await this.request<any[]>('/api/v1/conversations');
+    return Array.isArray(result) ? result : [];
   }
 
-  async createConversation(data: any) {
-    return this.request('/api/v1/conversations', {
+  async createConversation(data: { title: string }): Promise<{ id: string; title: string; created_at: string }> {
+    return this.request<{ id: string; title: string; created_at: string }>('/api/v1/conversations', {
       method: 'POST',
       body: data,
     });
   }
 
-  async getConversation(id: string) {
-    return this.request(`/api/v1/conversations/${id}`);
+  async getConversation(id: string): Promise<{ id: string; title: string; created_at: string }> {
+    return this.request<{ id: string; title: string; created_at: string }>(`/api/v1/conversations/${id}`);
   }
 
   // Message endpoints
-  async sendMessage(conversationId: string, content: string) {
-    return this.request(`/api/v1/conversations/${conversationId}/messages`, {
+  async sendMessage(conversationId: string, content: string): Promise<{ id: string; content: string; created_at: string }> {
+    return this.request<{ id: string; content: string; created_at: string }>(`/api/v1/conversations/${conversationId}/messages`, {
       method: 'POST',
       body: { content },
     });
   }
 
-  async getMessages(conversationId: string) {
-    return this.request(`/api/v1/conversations/${conversationId}/messages`);
+  async getMessages(conversationId: string): Promise<any[]> {
+    const result = await this.request<any[]>(`/api/v1/conversations/${conversationId}/messages`);
+    return Array.isArray(result) ? result : [];
   }
 }
 
