@@ -81,7 +81,7 @@ pbcopy < ~/.ssh/id_ed25519.pub
 cd /Users/fernandafaria/Downloads/P1A
 
 # Mudar remote para SSH
-git remote set-url origin git@github.com:fernandafaria/edutech.git
+git remote set-url origin git@github.com:fernandafaria/professor-ia.git
 
 # Verificar
 git remote -v
@@ -138,7 +138,7 @@ Após o push, acesse:
 ### ❌ "Repository not found"
 
 **Solução:**
-- Verifique se o repositório existe: https://github.com/fernandafaria/edutech
+- Verifique se o repositório existe: https://github.com/fernandafaria/professor-ia
 - Verifique se você tem permissão de escrita
 
 ---

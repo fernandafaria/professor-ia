@@ -82,7 +82,7 @@ pbcopy < ~/.ssh/id_ed25519.pub
 cd /Users/fernandafaria/Downloads/P1A
 
 # Adicionar remote com SSH
-git remote add origin git@github.com:SEU-USUARIO/P1A.git
+git remote add origin git@github.com:fernandafaria/professor-ia.git
 
 # Fazer push
 git push -u origin main
