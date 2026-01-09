@@ -7,7 +7,7 @@ O repositório já está conectado! Agora você precisa autenticar para fazer o 
 ## ✅ Status Atual
 
 - ✅ Commit inicial criado
-- ✅ Remote configurado: `https://github.com/fernandafaria/edutech.git`
+- ✅ Remote configurado: `https://github.com/fernandafaria/professor-ia.git`
 - ✅ Branch: `main`
 - ⏳ **Falta:** Autenticação para fazer push
 
@@ -111,7 +111,7 @@ git push -u origin main
 ## ✅ Verificar se Funcionou
 
 Após o push, acesse:
-- **Repositório:** https://github.com/fernandafaria/edutech
+- **Repositório:** https://github.com/fernandafaria/professor-ia
 
 **Verifique:**
 - ✅ Todos os arquivos aparecem
