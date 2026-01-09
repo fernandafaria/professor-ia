@@ -123,8 +123,16 @@ class ApiClient {
 
   // Conversation endpoints
   async getConversations(): Promise<any[]> {
-    const result = await this.request<any[]>('/api/v1/conversations');
-    return Array.isArray(result) ? result : [];
+    try {
+      const result = await this.request<any[]>('/api/v1/conversations');
+      if (Array.isArray(result)) {
+        return result;
+      }
+      return [];
+    } catch (error) {
+      console.error('Error fetching conversations:', error);
+      return [];
+    }
   }
 
   async createConversation(data: { title: string }): Promise<{ id: string; title: string; created_at: string }> {

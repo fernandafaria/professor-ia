@@ -39,7 +39,7 @@ export default function DashboardPage() {
       // Carregar conversas
       try {
         const convs = await api.getConversations();
-        setConversations(Array.isArray(convs) ? convs : []);
+        setConversations(convs);
       } catch (err) {
         console.error('Erro ao carregar conversas:', err);
         setConversations([]);
