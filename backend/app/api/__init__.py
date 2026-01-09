@@ -1,0 +1,1 @@
+"""API endpoints da plataforma educacional P1A."""

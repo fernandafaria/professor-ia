@@ -1,0 +1,21 @@
+{
+  "name": "plataforma-educacional-p1a",
+  "version": "1.0.0",
+  "description": "Plataforma Educacional com MCP Servers",
+  "scripts": {
+    "install:mcp": "npm run install:tier1 && npm run install:tier2 && npm run install:tier3",
+    "install:tier1": "npm install -g @modelcontextprotocol/server-supabase @modelcontextprotocol/server-desmos",
+    "install:tier2": "npm install -g @modelcontextprotocol/server-canvas @modelcontextprotocol/server-google-classroom @modelcontextprotocol/server-google-drive @modelcontextprotocol/server-zapier",
+    "install:tier3": "npm install -g @modelcontextprotocol/server-e2b @modelcontextprotocol/server-firecrawl @modelcontextprotocol/server-browserbase",
+    "setup": "npm run install:mcp && pip install -r requirements.txt",
+    "test:supabase": "npx -y @modelcontextprotocol/server-supabase",
+    "test:desmos": "npx -y @modelcontextprotocol/server-desmos"
+  },
+  "keywords": [
+    "education",
+    "mcp",
+    "platform"
+  ],
+  "author": "",
+  "license": "ISC"
+}

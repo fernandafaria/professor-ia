@@ -1,0 +1,1 @@
+"""Integração com Base Nacional Comum Curricular (BNCC)."""

@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "figma-remote": {
+      "url": "https://mcp.figma.com/mcp",
+      "transport": "sse"
+    },
+    "figma-desktop": {
+      "command": "npx",
+      "args": ["-y", "@figma/mcp-server"],
+      "env": {
+        "FIGMA_DESKTOP_PORT": "5555"
+      }
+    }
+  }
+}

@@ -1,0 +1,365 @@
+# Fontes de Papers e Artigos sobre Neurodivergências
+# Para scraping e coleta de conteúdo acadêmico e educacional
+
+# Bases de Dados Acadêmicas (APIs e Scraping)
+academic_databases:
+  # ERIC - Education Resources Information Center
+  - name: "ERIC"
+    url: "https://eric.ed.gov"
+    type: "academic_database"
+    priority: "critical"
+    frequency: "monthly"
+    api_available: true
+    api_endpoint: "https://api.ies.ed.gov/eric/"
+    api_key_required: true
+    api_documentation: "https://eric.ed.gov/?api"
+    search_terms:
+      - "ADHD education"
+      - "dyslexia learning"
+      - "autism spectrum education"
+      - "neurodivergent students"
+      - "learning differences"
+      - "special education"
+    selectors:
+      result_list: "div.result-item"
+      title: "h3.result-title a"
+      abstract: "div.result-abstract"
+      authors: "div.result-authors"
+      publication_date: "span.result-date"
+      pdf_link: "a.pdf-link"
+      full_text_link: "a.full-text-link"
+    notes: "Base de dados educacional mais completa, com acesso a papers e relatórios"
+    
+  # PubMed - National Library of Medicine
+  - name: "PubMed"
+    url: "https://pubmed.ncbi.nlm.nih.gov"
+    type: "academic_database"
+    priority: "critical"
+    frequency: "monthly"
+    api_available: true
+    api_endpoint: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
+    api_key_required: false
+    api_documentation: "https://www.ncbi.nlm.nih.gov/books/NBK25497/"
+    search_terms:
+      - "ADHD educational intervention"
+      - "dyslexia reading intervention"
+      - "autism educational strategies"
+      - "neurodevelopmental disorders education"
+      - "executive function education"
+    selectors:
+      article: "article.full-docsum"
+      title: "h1.heading-title"
+      abstract: "div.abstract"
+      authors: "div.authors"
+      doi: "span.citation-doi"
+      pmc_link: "a.pmc-link"
+      pubmed_link: "a.pubmed-link"
+    notes: "Acesso gratuito a papers biomédicos e educacionais"
+    
+  # SciELO - Scientific Electronic Library Online
+  - name: "SciELO Brasil"
+    url: "https://www.scielo.org"
+    type: "academic_database"
+    priority: "high"
+    frequency: "monthly"
+    api_available: true
+    api_endpoint: "https://api.scielo.org/v1/"
+    api_key_required: false
+    api_documentation: "https://api.scielo.org/docs/"
+    search_terms:
+      - "TDAH educação"
+      - "dislexia aprendizagem"
+      - "autismo educação"
+      - "neurodiversidade"
+      - "educação inclusiva"
+      - "dificuldades de aprendizagem"
+    selectors:
+      article: "article.article"
+      title: "h1.article-title"
+      abstract: "div.abstract"
+      authors: "div.authors"
+      keywords: "div.keywords"
+      pdf_link: "a.pdf-link"
+    notes: "Base brasileira com papers em português sobre educação inclusiva"
+    
+  # JSTOR
+  - name: "JSTOR"
+    url: "https://www.jstor.org"
+    type: "academic_database"
+    priority: "high"
+    frequency: "monthly"
+    api_available: true
+    api_endpoint: "https://api.jstor.org/"
+    api_key_required: true
+    api_documentation: "https://www.jstor.org/api"
+    search_terms:
+      - "neurodivergence"
+      - "ADHD educational strategies"
+      - "dyslexia intervention"
+      - "autism education"
+    notes: "Acesso a journals completos (pode requerer assinatura institucional)"
+    
+  # ScienceDirect
+  - name: "ScienceDirect"
+    url: "https://www.sciencedirect.com"
+    type: "academic_database"
+    priority: "medium"
+    frequency: "monthly"
+    api_available: false
+    search_terms:
+      - "neurodevelopmental disorders"
+      - "learning disabilities"
+      - "special educational needs"
+    notes: "Acesso limitado sem assinatura, mas tem muitos papers relevantes"
+
+# Repositórios de Acesso Aberto (Open Access)
+open_access_repositories:
+  # arXiv (para papers mais recentes)
+  - name: "arXiv"
+    url: "https://arxiv.org"
+    type: "preprint_repository"
+    priority: "medium"
+    frequency: "weekly"
+    api_available: true
+    api_endpoint: "https://export.arxiv.org/api/query"
+    search_terms:
+      - "neurodivergence education"
+      - "learning disabilities"
+    notes: "Preprints de papers recentes (gratuito)"
+    
+  # PubMed Central (PMC) - Acesso Aberto
+  - name: "PubMed Central"
+    url: "https://www.ncbi.nlm.nih.gov/pmc"
+    type: "open_access"
+    priority: "high"
+    frequency: "monthly"
+    api_available: true
+    api_endpoint: "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi"
+    search_terms:
+      - "ADHD"
+      - "dyslexia"
+      - "autism"
+      - "neurodevelopmental"
+    notes: "Papers de acesso aberto do PubMed"
+    
+  # DOAJ - Directory of Open Access Journals
+  - name: "DOAJ"
+    url: "https://doaj.org"
+    type: "open_access"
+    priority: "medium"
+    frequency: "monthly"
+    api_available: true
+    api_endpoint: "https://doaj.org/api/v2/"
+    search_terms:
+      - "education"
+      - "special education"
+      - "learning disabilities"
+    notes: "Diretório de journals de acesso aberto"
+
+# Organizações e Institutos de Pesquisa
+research_organizations:
+  # Instituto ABCD (Brasil)
+  - name: "Instituto ABCD"
+    url: "https://institutoabcd.org.br"
+    type: "research_organization"
+    priority: "critical"
+    frequency: "monthly"
+    selectors:
+      article: "article.content"
+      title: "h1"
+      content: "div.post-content"
+      tags: "div.tags"
+    search_paths:
+      - "/pesquisas"
+      - "/publicacoes"
+      - "/materiais"
+    notes: "Pesquisas e guias sobre dislexia e TDAH no Brasil"
+    
+  # Autismo & Realidade
+  - name: "Autismo & Realidade"
+    url: "https://autismoerealidade.org.br"
+    type: "research_organization"
+    priority: "critical"
+    frequency: "monthly"
+    selectors:
+      article: "article.post"
+      title: "h1.title"
+      content: "div.content"
+    search_paths:
+      - "/artigos"
+      - "/pesquisas"
+      - "/estrategias"
+    notes: "Estratégias pedagógicas para TEA"
+    
+  # Landmark College (EUA)
+  - name: "Landmark College Library"
+    url: "https://www.landmark.edu/library"
+    type: "research_organization"
+    priority: "high"
+    frequency: "monthly"
+    notes: "Coleção especializada em neurodiversidade e diferenças de aprendizagem"
+    
+  # Understood.org
+  - name: "Understood.org"
+    url: "https://www.understood.org"
+    type: "educational_resource"
+    priority: "high"
+    frequency: "weekly"
+    selectors:
+      article: "article.article"
+      title: "h1"
+      content: "div.article-body"
+      tags: "div.tags"
+    notes: "Recursos educacionais baseados em evidências sobre TDAH, dislexia, etc."
+    
+  # ADDitude Magazine
+  - name: "ADDitude Magazine"
+    url: "https://www.additudemag.com"
+    type: "educational_resource"
+    priority: "medium"
+    frequency: "weekly"
+    selectors:
+      article: "article.article"
+      title: "h1"
+      content: "div.content"
+    notes: "Artigos e recursos sobre TDAH"
+
+# Bases de Dados Especializadas
+specialized_databases:
+  # NDAR - National Database for Autism Research
+  - name: "NDAR"
+    url: "https://nda.nih.gov"
+    type: "specialized_database"
+    priority: "high"
+    frequency: "quarterly"
+    api_available: true
+    api_endpoint: "https://nda.nih.gov/api"
+    api_key_required: true
+    notes: "Repositório de dados de pesquisa sobre autismo"
+    
+  # LD Online
+  - name: "LD Online"
+    url: "https://www.ldonline.org"
+    type: "educational_resource"
+    priority: "medium"
+    frequency: "monthly"
+    selectors:
+      article: "article.article"
+      title: "h1"
+      content: "div.content"
+    notes: "Recursos sobre dificuldades de aprendizagem"
+
+# Fontes Brasileiras Específicas
+brazilian_sources:
+  # ABDA - Associação Brasileira de Déficit de Atenção
+  - name: "ABDA"
+    url: "https://www.tdah.org.br"
+    type: "organization"
+    priority: "high"
+    frequency: "monthly"
+    selectors:
+      article: "article.post"
+      title: "h1"
+      content: "div.content"
+    notes: "Informações sobre TDAH no Brasil"
+    
+  # ABD - Associação Brasileira de Dislexia
+  - name: "ABD"
+    url: "https://www.dislexia.org.br"
+    type: "organization"
+    priority: "high"
+    frequency: "monthly"
+    notes: "Recursos sobre dislexia no Brasil"
+    
+  # Portal do Professor (MEC)
+  - name: "Portal do Professor"
+    url: "https://portaldoprofessor.mec.gov.br"
+    type: "educational_resource"
+    priority: "medium"
+    frequency: "monthly"
+    search_terms:
+      - "educação inclusiva"
+      - "TDAH"
+      - "dislexia"
+      - "autismo"
+    notes: "Recursos do MEC para educação inclusiva"
+
+# Configurações de Scraping para Papers
+scraping_config:
+  # Delays para respeitar rate limits
+  delay_between_requests: 2.0  # segundos
+  delay_between_papers: 1.0  # segundos
+  
+  # Timeouts
+  request_timeout: 60  # segundos (papers podem ser grandes)
+  
+  # Retries
+  max_retries: 3
+  retry_delay: 5.0  # segundos
+  
+  # User Agent
+  user_agent: "Mozilla/5.0 (Educational Platform Research Bot)"
+  
+  # Rate Limiting
+  requests_per_minute: 30  # mais conservador para bases acadêmicas
+  requests_per_hour: 1000
+  
+  # Respeitar robots.txt
+  respect_robots_txt: true
+  
+  # Headers
+  headers:
+    Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    Accept-Language: "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7"
+    Accept-Encoding: "gzip, deflate, br"
+    Connection: "keep-alive"
+    Upgrade-Insecure-Requests: "1"
+
+# Estrutura de Dados para Papers
+paper_structure:
+  required_fields:
+    - title
+    - abstract
+    - authors
+    - publication_date
+    - source_url
+    
+  optional_fields:
+    - doi
+    - keywords
+    - full_text
+    - pdf_url
+    - citations
+    - references
+    - methodology
+    - findings
+    - implications
+    
+  metadata_fields:
+    - neurodivergence_type  # TDAH, dislexia, TEA, etc.
+    - educational_level  # EF II, EM, etc.
+    - subject_area  # matemática, português, etc.
+    - intervention_type  # estratégia, tecnologia, etc.
+    - language  # pt-BR, en-US, etc.
+
+# Processamento para RAG
+rag_processing:
+  chunk_size: 2000  # caracteres (papers são mais longos)
+  chunk_overlap: 400  # caracteres
+  min_chunk_size: 500  # caracteres mínimos
+  
+  # Metadados para chunks
+  include_metadata:
+    - paper_title
+    - authors
+    - publication_date
+    - neurodivergence_type
+    - subject_area
+    - source_database
+    
+  # Filtros de qualidade
+  min_abstract_length: 200  # caracteres
+  exclude_patterns:
+    - ".*copyright.*"
+    - ".*all rights reserved.*"
+    - ".*doi:.*"

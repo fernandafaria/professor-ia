@@ -1,0 +1,177 @@
+{
+  "interest_categories": {
+    "games": {
+      "name": "Games e Jogos",
+      "keywords": [
+        "video game",
+        "jogo",
+        "gaming",
+        "playstation",
+        "xbox",
+        "nintendo",
+        "esports",
+        "streaming",
+        "twitch",
+        "youtube gaming"
+      ],
+      "subcategories": [
+        "ação",
+        "aventura",
+        "rpg",
+        "estratégia",
+        "esportes",
+        "fps",
+        "moba",
+        "battle royale"
+      ]
+    },
+    "futebol": {
+      "name": "Futebol",
+      "keywords": [
+        "futebol",
+        "futebol brasileiro",
+        "brasileirão",
+        "libertadores",
+        "copa do mundo",
+        "seleção brasileira",
+        "champions league",
+        "flamengo",
+        "palmeiras",
+        "corinthians",
+        "atlético-mg"
+      ],
+      "subcategories": [
+        "brasileirão",
+        "libertadores",
+        "copas",
+        "seleções",
+        "transferências",
+        "táticas"
+      ]
+    },
+    "kpop": {
+      "name": "K-Pop",
+      "keywords": [
+        "k-pop",
+        "kpop",
+        "bts",
+        "blackpink",
+        "twice",
+        "exo",
+        "red velvet",
+        "itzy",
+        "newjeans",
+        "korean pop",
+        "idol"
+      ],
+      "subcategories": [
+        "grupos",
+        "solos",
+        "mvs",
+        "coreografias",
+        "albuns",
+        "concertos"
+      ]
+    },
+    "musica": {
+      "name": "Música",
+      "keywords": [
+        "música",
+        "artista",
+        "cantor",
+        "banda",
+        "álbum",
+        "single",
+        "hit",
+        "playlist",
+        "spotify",
+        "youtube music"
+      ],
+      "subcategories": [
+        "pop",
+        "rock",
+        "rap",
+        "hip hop",
+        "funk",
+        "sertanejo",
+        "pagode",
+        "forró",
+        "eletrônica"
+      ]
+    },
+    "cinema": {
+      "name": "Cinema e Filmes",
+      "keywords": [
+        "filme",
+        "cinema",
+        "netflix",
+        "disney+",
+        "hbo",
+        "séries",
+        "streaming"
+      ]
+    },
+    "tecnologia": {
+      "name": "Tecnologia",
+      "keywords": [
+        "tech",
+        "tecnologia",
+        "celular",
+        "smartphone",
+        "computador",
+        "internet",
+        "redes sociais",
+        "tiktok",
+        "instagram"
+      ]
+    },
+    "esportes": {
+      "name": "Esportes Gerais",
+      "keywords": [
+        "esporte",
+        "atletismo",
+        "basquete",
+        "vôlei",
+        "tênis",
+        "olimpíadas"
+      ]
+    }
+  },
+  "personalization_strategies": {
+    "games": {
+      "content_adaptation": {
+        "gamification_level": "high",
+        "interactive_exercises": true,
+        "progress_tracking": "level_system",
+        "achievements": true
+      },
+      "language_style": "informal, engajador, com referências a games"
+    },
+    "futebol": {
+      "content_adaptation": {
+        "examples_theme": "futebol",
+        "analogies": "estratégias táticas",
+        "competitive_elements": true
+      },
+      "language_style": "dinâmico, com analogias esportivas"
+    },
+    "kpop": {
+      "content_adaptation": {
+        "visual_content": true,
+        "multimedia": true,
+        "cultural_context": "coreano",
+        "group_dynamics_examples": true
+      },
+      "language_style": "moderno, inclusivo, culturalmente sensível"
+    },
+    "musica": {
+      "content_adaptation": {
+        "rhythmic_learning": true,
+        "audio_content": true,
+        "lyrics_as_examples": true,
+        "creative_exercises": true
+      },
+      "language_style": "criativo, expressivo, artístico"
+    }
+  }
+}

@@ -1,0 +1,314 @@
+# Configuração de fontes de dados para web scraping
+# Baseado no mapeamento estratégico de webscraping para plataforma edtech
+
+# Fontes Curriculares (BNCC e Conteúdo Educacional)
+curricular_sources:
+  # API BNCC - Fonte principal para estrutura curricular
+  - name: "API BNCC Cientificar"
+    url: "https://cientificar1992.pythonanywhere.com"
+    type: "api"
+    priority: "critical"
+    frequency: "monthly"
+    api_endpoints:
+      base: "https://cientificar1992.pythonanywhere.com/api"
+      disciplines: "/disciplinas"
+      skills: "/habilidades"
+      knowledge_objects: "/objetos-conhecimento"
+    authentication: null
+    notes: "API REST completa com dados estruturados da BNCC"
+    
+  # Projeto Ágatha - Banco de questões ENEM/Vestibulares
+  - name: "Projeto Ágatha Edu"
+    url: "https://www.projetoagathaedu.com.br"
+    type: "educational"
+    priority: "very_high"
+    frequency: "weekly"
+    selectors:
+      question_list: "div.questao"
+      question_text: "div.enunciado"
+      alternatives: "div.alternativas"
+      answer: "div.gabarito"
+      resolution: "div.resolucao"
+      subject: "span.disciplina"
+      difficulty: "span.dificuldade"
+    notes: "27.615+ questões organizadas por disciplina e vestibular"
+    
+  # Nova Escola - Planos de aula e metodologias
+  - name: "Nova Escola"
+    url: "https://novaescola.org.br"
+    type: "educational"
+    priority: "high"
+    frequency: "daily"
+    selectors:
+      article: "article.main-content"
+      title: "h1.article-title"
+      content: "div.article-body"
+      tags: "div.tags a"
+      bncc_skills: "div.bncc-habilidades"
+      grade: "span.serie"
+      subject: "span.disciplina"
+    notes: "7.000+ planos de aula alinhados à BNCC"
+    
+  # AVAMEC - Ambiente Virtual do MEC
+  - name: "AVAMEC"
+    url: "https://avamec.mec.gov.br"
+    type: "educational"
+    priority: "medium"
+    frequency: "weekly"
+    selectors:
+      course_list: "div.cursos"
+      course_content: "div.conteudo-curso"
+    notes: "Recursos educacionais do Ministério da Educação"
+    
+  # Repositórios REA
+  - name: "Recursos Educacionais Abertos"
+    url: "https://sites.google.com/view/rea-ensino-fundamental"
+    type: "educational"
+    priority: "medium"
+    frequency: "monthly"
+    license: "Creative Commons"
+    notes: "Materiais com licença aberta"
+
+# Fontes de Questões e Exercícios
+question_sources:
+  - name: "QConcursos ENEM"
+    url: "https://www.qconcursos.com"
+    type: "questions"
+    priority: "high"
+    frequency: "weekly"
+    selectors:
+      question: "div.questao"
+      alternatives: "div.alternativas"
+      answer: "div.gabarito"
+    notes: "Questões comentadas por professores"
+    
+  - name: "ZBS Educa"
+    url: "https://www.zbseduca.com.br"
+    type: "questions"
+    priority: "medium"
+    frequency: "weekly"
+    notes: "Questões separadas por dificuldade e habilidade BNCC"
+    
+# Olimpíadas Científicas
+olympiad_sources:
+  - name: "OBM - Olimpíada Brasileira de Matemática"
+    url: "https://www.obm.org.br"
+    type: "olympiad"
+    priority: "medium"
+    frequency: "monthly"
+      
+  - name: "OBA - Olimpíada Brasileira de Astronomia"
+    url: "https://www.oba.org.br"
+    type: "olympiad"
+    priority: "low"
+    frequency: "monthly"
+      
+  - name: "OBF - Olimpíada Brasileira de Física"
+    url: "https://www.sbfisica.org.br"
+    type: "olympiad"
+    priority: "low"
+    frequency: "monthly"
+
+# Fontes Culturais (Interesses dos Alunos)
+cultural_sources:
+  games:
+    - name: "Fandom Wikis"
+      url: "https://www.fandom.com"
+      type: "wiki"
+      priority: "high"
+      frequency: "weekly"
+      selectors:
+        article: "article.mw-content-text"
+        title: "h1.page-header__title"
+        infobox: "aside.portable-infobox"
+      notes: "Wikis estruturados sobre games populares"
+      
+    - name: "Liquipedia"
+      url: "https://liquipedia.net"
+      type: "wiki"
+      priority: "high"
+      frequency: "weekly"
+      notes: "Wiki especializado em e-sports"
+      
+    - name: "Steam Charts"
+      url: "https://steamcharts.com"
+      type: "data"
+      priority: "medium"
+      frequency: "daily"
+      notes: "Rankings de jogos mais jogados"
+      
+    - name: "GameSpot Brasil"
+      url: "https://www.gamespot.com.br"
+      type: "news"
+      priority: "medium"
+      frequency: "daily"
+      selectors:
+        article: "article.content"
+        title: "h1"
+        tags: "div.tags"
+    
+    - name: "IGN Brasil"
+      url: "https://br.ign.com"
+      type: "news"
+      priority: "medium"
+      frequency: "daily"
+  
+  futebol:
+    - name: "Transfermarkt"
+      url: "https://www.transfermarkt.com.br"
+      type: "data"
+      priority: "high"
+      frequency: "daily"
+      notes: "Estatísticas detalhadas de jogadores e times"
+      
+    - name: "Globo Esporte"
+      url: "https://ge.globo.com"
+      type: "news"
+      priority: "medium"
+      frequency: "hourly"
+      selectors:
+        content: "div.materia-conteudo"
+        title: "h1"
+        tags: "div.tags"
+    
+    - name: "ESPN Brasil"
+      url: "https://www.espn.com.br"
+      type: "news"
+      priority: "medium"
+      frequency: "hourly"
+      selectors:
+        article: "article.article"
+        title: "h1"
+        
+  musica:
+    - name: "Spotify Charts Brasil"
+      url: "https://charts.spotify.com"
+      type: "api"
+      priority: "medium"
+      frequency: "daily"
+      api_endpoint: "https://api.spotify.com/v1/charts"
+      notes: "Top 50 diário e semanal (requer API key)"
+      
+    - name: "Letras.mus.br"
+      url: "https://www.letras.mus.br"
+      type: "lyrics"
+      priority: "medium"
+      frequency: "weekly"
+      selectors:
+        lyrics: "div.cnt-letra"
+        title: "h1"
+        artist: "span.art_nome"
+      notes: "Letras de músicas populares"
+      
+    - name: "Rolling Stone Brasil"
+      url: "https://rollingstone.com.br"
+      type: "news"
+      priority: "medium"
+      frequency: "daily"
+    
+    - name: "Terra Música"
+      url: "https://musica.terra.com.br"
+      type: "news"
+      priority: "low"
+      frequency: "daily"
+      
+  kpop:
+    - name: "Soompi Brasil"
+      url: "https://www.soompi.com.br"
+      type: "news"
+      priority: "low"
+      frequency: "daily"
+    
+    - name: "Allkpop"
+      url: "https://www.allkpop.com"
+      type: "news"
+      priority: "low"
+      frequency: "daily"
+
+# Fontes de Acessibilidade e Neurodivergência
+accessibility_sources:
+  - name: "Instituto ABCD"
+    url: "https://institutoabcd.org.br"
+    type: "research"
+    priority: "high"
+    frequency: "monthly"
+    notes: "Pesquisas e guias sobre dislexia e TDAH"
+    
+  - name: "Autismo & Realidade"
+    url: "https://autismoerealidade.org.br"
+    type: "research"
+    priority: "high"
+    frequency: "monthly"
+    notes: "Estratégias pedagógicas para TEA"
+    
+  - name: "SciELO"
+    url: "https://www.scielo.org"
+    type: "academic"
+    priority: "high"
+    frequency: "monthly"
+    notes: "Artigos acadêmicos sobre educação inclusiva"
+    api_available: true
+    api_endpoint: "https://api.scielo.org/v1/"
+
+# Bases de Dados Acadêmicas para Neurodivergências
+# Ver arquivo neurodivergence_sources.yaml para lista completa
+academic_databases:
+  - name: "ERIC"
+    url: "https://eric.ed.gov"
+    type: "academic_database"
+    priority: "critical"
+    api_available: true
+    api_endpoint: "https://api.ies.ed.gov/eric/"
+    notes: "Base de dados educacional mais completa"
+    
+  - name: "PubMed"
+    url: "https://pubmed.ncbi.nlm.nih.gov"
+    type: "academic_database"
+    priority: "critical"
+    api_available: true
+    api_endpoint: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
+    notes: "Acesso gratuito a papers biomédicos e educacionais"
+
+# Fontes de Benchmarks Educacionais
+benchmark_sources:
+  - name: "INEP Data"
+    url: "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos"
+    type: "data"
+    priority: "medium"
+    frequency: "quarterly"
+    notes: "Microdados SAEB, IDEB, ENEM"
+    
+  - name: "Base dos Dados"
+    url: "https://basedosdados.org"
+    type: "data"
+    priority: "medium"
+    frequency: "quarterly"
+    notes: "Dados estruturados sobre educação"
+
+# Fontes de Tendências
+trend_sources:
+  - name: "Google Trends Brasil"
+    url: "https://trends.google.com.br"
+    type: "trends"
+    priority: "low"
+    frequency: "daily"
+    notes: "Tópicos em alta (requer API ou scraping cuidadoso)"
+    
+  - name: "Twitter Trending Brasil"
+    url: "https://twitter.com/explore"
+    type: "social"
+    priority: "low"
+    frequency: "hourly"
+    notes: "Trending topics (requer API oficial)"
+
+# Configurações Gerais
+scraping_config:
+  delay_min: 1.0  # segundos
+  delay_max: 3.0  # segundos
+  timeout: 30  # segundos
+  max_retries: 3
+  user_agent: "Mozilla/5.0 (Educational Platform Bot)"
+  respect_robots_txt: true
+  rate_limit_per_domain: 60  # requisições por minuto
+  chunk_size: 1000  # caracteres por chunk para RAG
+  chunk_overlap: 200  # sobreposição entre chunks

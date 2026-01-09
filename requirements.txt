@@ -1,0 +1,32 @@
+# Tier 1 - Essencial
+# Matemática - SymPy / Scientific Calculator
+sympy
+numpy
+scipy
+pandas
+mcp-scientific-calculator
+
+# Visualização - Plotly
+plotly
+
+# OpenAI para homework grading e outros serviços
+openai
+
+# Requests para APIs
+requests
+
+# Tier 1 - Pacotes MCP não disponíveis oficialmente (comentados)
+# anki-connect - Não é um pacote Python, é um plugin do Anki instalado via Anki Add-ons
+# mcp-server-homework-grading - Não disponível oficialmente no PyPI
+# mcp-server-plotly - Não disponível oficialmente no PyPI
+
+# Tier 2 - Expansão (comentados até verificação)
+# mcp-server-moodle - Não disponível oficialmente no PyPI
+# mcp-server-minimax - Não disponível oficialmente no PyPI
+# minimax-python-sdk - Verificar nome correto
+
+# Tier 3 - Otimização (comentados até verificação)
+# mcp-server-exa - Não disponível oficialmente no PyPI
+# exa-py - Verificar nome correto
+# mcp-server-aminer - Não disponível oficialmente no PyPI
+# aminer-api - Verificar nome correto

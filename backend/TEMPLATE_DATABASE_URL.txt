@@ -1,0 +1,21 @@
+# Template da Database URL - Só preencher a senha!
+
+## Seu Projeto Supabase
+Projeto: mzhgkbdnslnlpfciduru
+URL: https://mzhgkbdnslnlpfciduru.supabase.co
+
+## Template da URL (Pooler - Recomendado)
+postgresql://postgres.mzhgkbdnslnlpfciduru:SUA_SENHA_AQUI@aws-0-sa-east-1.pooler.supabase.com:5432/postgres
+
+## Template da URL (Direct - Para Migrations)
+postgresql://postgres.mzhgkbdnslnlpfciduru:SUA_SENHA_AQUI@db.mzhgkbdnslnlpfciduru.supabase.co:5432/postgres
+
+## Como obter a senha:
+1. Acesse: https://app.supabase.com/project/mzhgkbdnslnlpfciduru/settings/database
+2. Role até "Database password"
+3. Clique em "Reset database password"
+4. Copie a senha que aparece
+5. Substitua SUA_SENHA_AQUI acima pela senha copiada
+
+## Depois, cole no arquivo backend/.env:
+DATABASE_URL=postgresql://postgres.mzhgkbdnslnlpfciduru:SUA_SENHA@aws-0-sa-east-1.pooler.supabase.com:5432/postgres
