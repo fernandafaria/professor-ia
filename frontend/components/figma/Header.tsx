@@ -1,6 +1,6 @@
 /**
- * Header Component - Landing Page Professor IA
- * Design completo do Figma: https://www.figma.com/design/masYeVMxkPMQ0zDMDrvZCx/Untitled
+ * Header Component - Landing Page mano, traduz!
+ * Design: https://www.figma.com/design/kYaKQo5HILal0lD7HEcGcN/Untitled
  */
 
 'use client';
@@ -15,18 +15,16 @@ export default function Header() {
       <div className="header-content">
         <div className="logo">
           <svg
-            width="20"
-            height="20"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-              fill="#8B5CF6"
-            />
+            <circle cx="12" cy="12" r="10" fill="#8B5CF6"/>
+            <text x="12" y="16" fontSize="12" fontWeight="bold" fill="white" textAnchor="middle">D</text>
           </svg>
-          <span className="logo-text">Professor IA</span>
+          <span className="logo-text">mano, traduz!</span>
         </div>
         <button 
           className="login-button"
@@ -38,9 +36,8 @@ export default function Header() {
 
       <style jsx>{`
         .header {
-          background-color: white;
+          background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
           padding: 1.5rem 2rem;
-          border-bottom: 1px solid #f0f0f0;
           position: sticky;
           top: 0;
           z-index: 100;
@@ -57,7 +54,7 @@ export default function Header() {
         .logo {
           display: flex;
           align-items: center;
-          gap: 0.5rem;
+          gap: 0.75rem;
         }
 
         .logo svg {
@@ -67,15 +64,16 @@ export default function Header() {
         .logo-text {
           font-size: 1.25rem;
           font-weight: 600;
-          color: #333;
+          color: white;
+          font-style: italic;
         }
 
         .login-button {
           background: transparent;
           border: none;
-          color: #8B5CF6;
+          color: white;
           font-size: 1rem;
-          font-weight: 600;
+          font-weight: 500;
           cursor: pointer;
           padding: 0.5rem 1rem;
           border-radius: 6px;
@@ -83,7 +81,7 @@ export default function Header() {
         }
 
         .login-button:hover {
-          background-color: #f5f0ff;
+          background-color: rgba(255, 255, 255, 0.1);
         }
 
         @media (max-width: 768px) {

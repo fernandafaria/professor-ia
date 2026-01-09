@@ -1,12 +1,12 @@
 /**
- * Landing Page Principal - Professor IA
- * Design completo do Figma: https://www.figma.com/design/masYeVMxkPMQ0zDMDrvZCx/Untitled
+ * Landing Page Principal - mano, traduz!
+ * Design: https://www.figma.com/design/kYaKQo5HILal0lD7HEcGcN/Untitled
  */
 
 import Header from '@/components/figma/Header';
 import HeroSection from '@/components/figma/HeroSection';
+import ComoFuncionaSection from '@/components/figma/ComoFuncionaSection';
 import WhySection from '@/components/figma/WhySection';
-import GameChangerSection from '@/components/figma/GameChangerSection';
 import FinalCTA from '@/components/figma/FinalCTA';
 import Footer from '@/components/figma/Footer';
 
@@ -15,8 +15,8 @@ export default function Home() {
     <main className="landing-page">
       <Header />
       <HeroSection />
+      <ComoFuncionaSection />
       <WhySection />
-      <GameChangerSection />
       <FinalCTA />
       <Footer />
     </main>
