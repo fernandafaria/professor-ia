@@ -51,10 +51,15 @@ Certifique-se de que o `frontend/package.json` tem os scripts corretos:
    **Project Settings:**
    - **Project Name:** `p1a-frontend` (ou o nome que preferir)
    - **Framework Preset:** Next.js (detecta automaticamente)
-   - **Root Directory:** `frontend` ⚠️ **IMPORTANTE!**
-   - **Build Command:** `npm run build` (automático)
+   - **Root Directory:** `frontend` ⚠️ **IMPORTANTE!** (deve apontar para pasta frontend/)
+   - **Build Command:** `npm run build` (automático após configurar Root Directory)
    - **Output Directory:** `.next` (automático)
    - **Install Command:** `npm install` (automático)
+   
+   **OU use o arquivo vercel.json:**
+   - O projeto já tem `vercel.json` na raiz
+   - Ele configura automaticamente o Root Directory como `frontend`
+   - O Vercel deve detectar automaticamente
 
 ### **4. Configurar Variáveis de Ambiente**
 
