@@ -103,8 +103,16 @@ class ApiClient {
 
   // Profile endpoints
   async getProfiles(): Promise<any[]> {
-    const result = await this.request<any[]>('/api/v1/profile');
-    return Array.isArray(result) ? result : [];
+    try {
+      const result = await this.request<any[]>('/api/v1/profile');
+      if (Array.isArray(result)) {
+        return result;
+      }
+      return [];
+    } catch (error) {
+      console.error('Error fetching profiles:', error);
+      return [];
+    }
   }
 
   async createProfile(data: any): Promise<{ id: string; name: string; subject?: string; grade?: string }> {
@@ -155,8 +163,16 @@ class ApiClient {
   }
 
   async getMessages(conversationId: string): Promise<any[]> {
-    const result = await this.request<any[]>(`/api/v1/conversations/${conversationId}/messages`);
-    return Array.isArray(result) ? result : [];
+    try {
+      const result = await this.request<any[]>(`/api/v1/conversations/${conversationId}/messages`);
+      if (Array.isArray(result)) {
+        return result;
+      }
+      return [];
+    } catch (error) {
+      console.error('Error fetching messages:', error);
+      return [];
+    }
   }
 }
 
