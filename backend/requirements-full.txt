@@ -1,0 +1,65 @@
+# FastAPI e servidor
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+
+# Banco de dados
+sqlalchemy==2.0.23
+alembic==1.12.1
+psycopg2-binary==2.9.9
+asyncpg==0.29.0
+
+# RAG e ML
+langchain==0.1.0
+langchain-openai==0.0.2
+langchain-community==0.0.10
+langchain-anthropic==0.1.0  # Integração Claude com LangChain
+chromadb==0.4.18
+anthropic==0.34.2  # SDK oficial do Anthropic (Claude)
+openai>=1.6.1,<2.0.0  # Compatível com langchain-openai 0.0.2
+sentence-transformers==2.2.2
+torch==2.1.1
+
+# NLP em Português
+spacy==3.7.2
+https://github.com/explosion/spacy-models/releases/download/pt_core_news_lg-3.7.0/pt_core_news_lg-3.7.0-py3-none-any.whl
+
+# Web Scraping
+beautifulsoup4==4.12.2
+lxml==4.9.3
+scrapy==2.11.0
+selenium==4.15.2
+requests==2.31.0
+httpx==0.25.2
+firecrawl-py==0.0.16  # Firecrawl para web scraping avançado
+
+# Processamento de tarefas assíncronas
+celery==5.3.4
+redis==5.0.1
+
+# Validação e schemas
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# Utilitários
+python-dotenv==1.0.0
+pyyaml==6.0.1
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-dateutil==2.8.2
+
+# Testes
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+httpx==0.25.2
+
+# Logging e monitoramento
+structlog==23.2.0
+prometheus-client==0.19.0
+
+# Desenvolvimento
+black==23.11.0
+flake8==6.1.0
+mypy==1.7.1
+isort==5.12.0

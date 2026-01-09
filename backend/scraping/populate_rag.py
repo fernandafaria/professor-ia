@@ -14,10 +14,15 @@ from datetime import datetime
 # Adicionar diretório raiz ao path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from backend.scraping.pipeline import ScrapingPipeline
-from backend.app.core.rag.retriever_supabase import RAGRetriever
-from backend.app.config import settings
-from backend.app.services.database import get_db
+import sys
+from pathlib import Path
+# Adicionar diretório raiz ao path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from scraping.pipeline import ScrapingPipeline
+from app.core.rag.retriever_supabase import RAGRetriever
+from app.config import settings
+from app.services.database import get_db
 
 logging.basicConfig(
     level=logging.INFO,
