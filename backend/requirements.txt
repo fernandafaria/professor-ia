@@ -16,7 +16,7 @@ langchain-community==0.0.10
 langchain-anthropic==0.1.0  # Integração Claude com LangChain
 chromadb==0.4.18
 anthropic==0.34.2  # SDK oficial do Anthropic (Claude)
-openai==1.3.7  # Mantido para embeddings (opcional)
+openai>=1.6.1,<2.0.0  # Compatível com langchain-openai 0.0.2
 sentence-transformers==2.2.2
 torch==2.1.1
 

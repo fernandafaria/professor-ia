@@ -1,0 +1,53 @@
+# Requirements Minimal para Deploy no Railway
+# Versão otimizada sem dependências pesadas (torch, sentence-transformers, spacy)
+# Use este arquivo se o build no Railway estiver muito lento ou falhando
+
+# FastAPI e servidor (ESSENCIAL)
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+
+# Banco de dados (ESSENCIAL)
+sqlalchemy==2.0.23
+alembic==1.12.1
+psycopg2-binary==2.9.9
+asyncpg==0.29.0
+
+# RAG e ML (ESSENCIAL - versões compatíveis)
+langchain==0.1.0
+langchain-openai==0.0.2
+langchain-community==0.0.10
+langchain-anthropic==0.1.0
+anthropic==0.34.2  # SDK oficial do Anthropic (Claude)
+openai>=1.6.1,<2.0.0  # Compatível com langchain-openai
+
+# Validação e schemas (ESSENCIAL)
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# Utilitários (ESSENCIAL)
+python-dotenv==1.0.0
+pyyaml==6.0.1
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-dateutil==2.8.2
+
+# Web Scraping (OPCIONAL - remover se não usar)
+beautifulsoup4==4.12.2
+lxml==4.9.3
+requests==2.31.0
+httpx==0.25.2
+
+# Logging (ESSENCIAL)
+structlog==23.2.0
+
+# NOTA: Dependências removidas para reduzir tamanho do build:
+# - torch==2.1.1 (muito pesado, ~2GB)
+# - sentence-transformers==2.2.2 (depende de torch)
+# - chromadb==0.4.18 (pode ser pesado)
+# - spacy==3.7.2 + pt_core_news_lg (568MB)
+# - scrapy==2.11.0 (não essencial para MVP)
+# - selenium==4.15.2 (não essencial para MVP)
+# - celery==5.3.4 + redis==5.0.1 (não essencial para MVP)
+# - firecrawl-py==0.0.16 (opcional)
+# - pytest, black, flake8, mypy, isort (dev dependencies)
