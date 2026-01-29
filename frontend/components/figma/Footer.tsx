@@ -23,38 +23,37 @@ export default function Footer() {
         {/* Brand */}
         <div className="footer-brand">
           <div className="logo-icon">
-            <span>D</span>
+            <span>f</span>
           </div>
           <div className="brand-info">
             <span className="brand-name">mano, traduz!</span>
             <p className="brand-tagline">
-              PROJETO QUE ACOMPANHA EM UM JEITO DIFERENTE PARA AJUDAR VOCÊ A APRENDER!
+              Assistente de estudos pra quem aprende diferente.
             </p>
           </div>
         </div>
 
         {/* Links */}
-        <div className="footer-links">
-          <div className="links-column">
-            <h3 className="links-title">produto</h3>
-            <ul className="links-list">
-              <li><a href="#features">features</a></li>
-              <li><a href="#faq">FAQ</a></li>
-              <li><a href="#comunidade">comunidade</a></li>
-            </ul>
-          </div>
-          <div className="links-column">
-            <h3 className="links-title">suporte</h3>
-            <ul className="links-list">
-              <li><a href="#faq">perguntas frequentes</a></li>
-              <li><a href="#contato">contato</a></li>
-              <li><a href="#ajuda">ajuda</a></li>
-            </ul>
-          </div>
+        <div className="links-column">
+          <h3 className="links-title">links</h3>
+          <ul className="links-list">
+            <li><a href="#como-funciona">como funciona</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contato">contato</a></li>
+          </ul>
+        </div>
+
+        {/* Legal */}
+        <div className="links-column">
+          <h3 className="links-title">legal</h3>
+          <ul className="links-list">
+            <li><a href="#termos">termos</a></li>
+            <li><a href="#privacidade">privacidade</a></li>
+          </ul>
         </div>
 
         {/* Newsletter */}
-        <div className="footer-newsletter">
+        <div id="newsletter" className="footer-newsletter">
           <h3 className="newsletter-title">newsletter</h3>
           <p className="newsletter-subtitle">receba dicas de estudo</p>
           <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
@@ -67,9 +66,7 @@ export default function Footer() {
               required
             />
             <button type="submit" className="newsletter-button">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M2.01 21L23 12L2.01 3L2 10L17 12L2 14L2.01 21Z" fill="white"/>
-              </svg>
+              enviar
             </button>
           </form>
         </div>
@@ -77,7 +74,7 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="footer-copyright">
-        <p>© 2024 mano traduz! Todos os direitos reservados.</p>
+        <p>© 2024 mano, traduz! todos os direitos reservados.</p>
       </div>
 
       <style jsx>{`
@@ -91,8 +88,8 @@ export default function Footer() {
           max-width: 1200px;
           margin: 0 auto;
           display: grid;
-          grid-template-columns: 1.5fr 1fr 1fr;
-          gap: 4rem;
+          grid-template-columns: 1.5fr 1fr 1fr 1fr;
+          gap: 3rem;
           margin-bottom: 3rem;
         }
 
@@ -131,11 +128,6 @@ export default function Footer() {
           margin: 0;
         }
 
-        .footer-links {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 2rem;
-        }
 
         .links-column {
           display: flex;
@@ -252,20 +244,11 @@ export default function Footer() {
             grid-template-columns: 1fr;
             gap: 3rem;
           }
-
-          .footer-links {
-            grid-template-columns: 1fr 1fr;
-          }
         }
 
         @media (max-width: 768px) {
           .footer {
             padding: 3rem 1.5rem 2rem;
-          }
-
-          .footer-links {
-            grid-template-columns: 1fr;
-            gap: 2rem;
           }
 
           .newsletter-form {

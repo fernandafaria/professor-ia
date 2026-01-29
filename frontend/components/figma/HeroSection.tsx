@@ -1,6 +1,6 @@
 /**
- * Hero Section - Landing Page mano, traduz!
- * Design: https://www.figma.com/design/kYaKQo5HILal0lD7HEcGcN/Untitled
+ * Hero Section - Landing mano, traduz
+ * Design: https://www.figma.com/design/ILmQnETiI8BLMHNat02e1W/Untitled?node-id=3-248
  */
 
 'use client';
@@ -17,67 +17,49 @@ export default function HeroSection() {
     router.push('/onboarding');
   };
 
-  const handleSeeOpportunities = () => {
+  const handleSeeHow = () => {
     const element = document.getElementById('como-funciona');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <section className="hero-section">
       <div className="hero-container">
         <div className="hero-content">
-          {/* Tag Amarela - removida no novo design, mantendo espaço para possíveis badges */}
-
-          {/* Título Principal */}
           <h1 className="hero-title">
-            prof que explica do jeito que tu entende
+            estudos do jeito que a sua cabeça aprende
           </h1>
-
-          {/* Descrição */}
           <p className="hero-description">
-            Explicações personalizadas com exemplos dos teus interesses. Matemática virou game, química virou K-pop
+            A matéria não entra do jeito que a escola ensina? A gente traduz o conteúdo pro seu jeito com seus interesses. Sem estresse, com autonomia. Sem julgamento, no seu tempo.
           </p>
-
-          {/* Botões CTA */}
           <div className="hero-buttons">
-            <button
-              className="cta-primary"
-              onClick={handleStart}
-              disabled={loading}
-            >
+            <button className="cta-primary" onClick={handleStart} disabled={loading}>
               {loading ? 'Carregando...' : 'começar grátis'}
             </button>
-            <button
-              className="cta-secondary"
-              onClick={handleSeeOpportunities}
-            >
-              ver oportunidades
+            <button className="cta-secondary" onClick={handleSeeHow}>
+              ver como funciona
             </button>
           </div>
-
-          {/* Feature Tags */}
           <div className="feature-tags">
-            <div className="tag">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
-              </svg>
-              XP na aula
-            </div>
-            <div className="tag">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor"/>
-              </svg>
-              Pontos XP
-            </div>
-            <div className="tag">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z" fill="currentColor"/>
-              </svg>
-              Resultados
-            </div>
+            <div className="tag">Ensino Fundamental e Médio</div>
+            <div className="tag">TDAH · dislexia · TEA</div>
+            <div className="tag">Sem desculpas</div>
+            <div className="tag">No seu ritmo</div>
           </div>
+        </div>
+        <div className="hero-chat-mock">
+          <div className="chat-bubble">
+            <div className="chat-header">
+              <span className="chat-logo">f</span>
+              <span className="chat-name">Mano</span>
+            </div>
+            <p className="chat-label">Matemática + Motivador</p>
+            <p className="chat-question">
+              Mano, tipo assim: se você tem 1/4 de HP no LoL, você tá com quantos % de vida? Isso é fração?
+            </p>
+            <button type="button" className="chat-cta">Entendeu!</button>
+          </div>
+          <p className="streak-label">Streak ativo</p>
         </div>
       </div>
 
@@ -96,13 +78,89 @@ export default function HeroSection() {
           max-width: 1200px;
           margin: 0 auto;
           width: 100%;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 3rem;
+          align-items: center;
         }
 
         .hero-content {
           display: flex;
           flex-direction: column;
           gap: 1.5rem;
-          max-width: 700px;
+        }
+
+        .hero-chat-mock {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 0.75rem;
+        }
+
+        .chat-bubble {
+          background: white;
+          border-radius: 16px;
+          padding: 1.25rem 1.5rem;
+          max-width: 320px;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .chat-header {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .chat-logo {
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          background: #7C3AED;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.875rem;
+          font-weight: 700;
+        }
+
+        .chat-name {
+          font-weight: 600;
+          color: #1a1a1a;
+          font-size: 0.9375rem;
+        }
+
+        .chat-label {
+          font-size: 0.75rem;
+          color: #7C3AED;
+          margin: 0 0 0.5rem 0;
+          font-weight: 600;
+        }
+
+        .chat-question {
+          font-size: 0.875rem;
+          color: #333;
+          line-height: 1.5;
+          margin: 0 0 1rem 0;
+        }
+
+        .chat-cta {
+          background: #FF6B35;
+          color: white;
+          border: none;
+          padding: 0.5rem 1rem;
+          border-radius: 8px;
+          font-size: 0.875rem;
+          font-weight: 600;
+          cursor: pointer;
+          width: 100%;
+        }
+
+        .streak-label {
+          font-size: 0.8125rem;
+          color: rgba(255, 255, 255, 0.85);
+          margin: 0;
         }
 
         .yellow-tag {
@@ -204,6 +262,14 @@ export default function HeroSection() {
         }
 
         @media (max-width: 968px) {
+          .hero-container {
+            grid-template-columns: 1fr;
+          }
+
+          .hero-chat-mock {
+            display: none;
+          }
+
           .hero-title {
             font-size: 3rem;
           }

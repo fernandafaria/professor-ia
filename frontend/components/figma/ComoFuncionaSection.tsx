@@ -12,9 +12,9 @@ export default function ComoFuncionaSection() {
         {/* Header */}
         <div className="section-header">
           <div className="section-label">COMO FUNCIONA</div>
-          <h2 className="section-title">Tradução em 3 passos</h2>
+          <h2 className="section-title">Do &quot;não entendi&quot; pro &quot;agora sim&quot; em 3 passos</h2>
           <p className="section-description">
-            Do professorês pro teu idioma em segundos
+            Manda a pergunta do jeito que você sabe. O mano traduz pra você.
           </p>
         </div>
 
@@ -30,9 +30,9 @@ export default function ComoFuncionaSection() {
                   <path d="M7 9H17V11H7V9ZM7 12H15V14H7V12ZM7 6H17V8H7V6Z" fill="#7C3AED"/>
                 </svg>
               </div>
-              <h3 className="step-title">Conta tua dúvida</h3>
+              <h3 className="step-title">Conta sua dúvida</h3>
               <p className="step-description">
-                Manda a pergunta do jeito que tu sabe. Pode ser foto, texto, áudio... como quiser!
+                Manda a pergunta do jeito que você sabe: texto, foto ou áudio. Sem formalidade.
               </p>
             </div>
           </div>
@@ -48,7 +48,7 @@ export default function ComoFuncionaSection() {
               </div>
               <h3 className="step-title">mano traduz</h3>
               <p className="step-description">
-                A IA pega aquela explicação chata e transforma em algo que tu entende de verdade.
+                A IA pega aquela explicação difícil e transforma em algo que você entende, com exemplos dos seus interesses.
               </p>
             </div>
           </div>
@@ -62,9 +62,9 @@ export default function ComoFuncionaSection() {
                   <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#7C3AED"/>
                 </svg>
               </div>
-              <h3 className="step-title">Tu entende</h3>
+              <h3 className="step-title">Você entende e avança</h3>
               <p className="step-description">
-                Pronto! Agora faz sentido. E tu ainda ganha XP pra subir de nível.
+                Explicação clara na hora. E você ainda ganha XP pra subir de nível.
               </p>
             </div>
           </div>

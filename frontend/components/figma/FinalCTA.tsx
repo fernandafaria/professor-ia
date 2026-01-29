@@ -21,17 +21,17 @@ export default function FinalCTA() {
     <section className="final-cta">
       <div className="final-cta-container">
         <h2 className="cta-title">
-          Pronto pra entender de verdade?
+          Pronto pra estudar do seu jeito?
         </h2>
         <p className="cta-description">
-          Começa grátis, sem cartão de crédito. É só criar teu Mano e já começar a mandar bem!
+          Começa grátis, sem cartão. Crie seu perfil e já começa a mandar bem no seu ritmo.
         </p>
         <button
           className="cta-button"
           onClick={handleStart}
           disabled={loading}
         >
-          {loading ? 'Carregando...' : 'começar agora é grátis'}
+          {loading ? 'Carregando...' : 'começar grátis'}
         </button>
       </div>
 

@@ -15,18 +15,16 @@ export default function Header() {
       <div className="header-content">
         <div className="logo">
           <div className="logo-icon">
-            <span>D</span>
+            <span>f</span>
           </div>
           <span className="logo-text">mano, traduz!</span>
         </div>
         
         <nav className="header-nav">
-          <a href="#inicio" className="nav-link">início</a>
-          <a href="#features" className="nav-link">feature</a>
-          <a href="#precos" className="nav-link">preço</a>
+          <a href="#" className="nav-link">início</a>
           <a href="#como-funciona" className="nav-link">como funciona</a>
+          <a href="#por-que" className="nav-link">por que o mano, traduz?</a>
           <a href="#faq" className="nav-link">FAQ</a>
-          <a href="#contato" className="nav-link">contato</a>
         </nav>
 
         <div className="header-actions">

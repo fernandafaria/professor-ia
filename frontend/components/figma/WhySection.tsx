@@ -27,34 +27,34 @@ export default function WhySection() {
   const features = [
     {
       iconColor: '#7C3AED',
-      title: 'Personalização total',
-      description: 'Matemática com exemplos de Fortnite, física com futebol, química com K-pop. Tu escolhe!',
+      title: 'feito pra neurodivergentes',
+      description: 'Interface e explicações pensadas para TDAH, dislexia, TEA. Sessões curtas, sem sobrecarga, no seu ritmo.',
     },
     {
       iconColor: '#FF6B35',
-      title: 'Tradução instantânea',
-      description: 'Aulas complexas viram exemplos simples. Conceitos abstratos viram situações reais.',
+      title: 'do professorês pro seu jeito',
+      description: 'Matemática com Fortnite, química com K-pop. A IA adapta o conteúdo aos seus interesses.',
     },
     {
       iconColor: '#2563EB',
-      title: 'Vira um game',
-      description: 'Ganhe XP, suba de nível, desbloqueie badges épicos e monte suas streaks.',
+      title: 'do difícil pro simples',
+      description: 'Conceitos da aula viram explicações e exemplos que você entende de verdade.',
     },
     {
       iconColor: '#16A34A',
-      title: 'Feito pra todo mundo',
-      description: 'Interface adaptável, explicações personalizadas, suporte pra neurodivergências.',
+      title: 'vira um game',
+      description: 'XP, níveis, badges e streaks. Progresso visível, sem cobrança de tempo ou formato único.',
     },
   ];
 
   return (
-    <section className="why-section">
+    <section id="por-que" className="why-section">
       <div className="why-container">
         <h2 className="section-title">
-          Por que você vai amar estudar aqui?
+          Por que o mano, traduz?
         </h2>
         <p className="section-subtitle">
-          Seu professor, suas regras. Aprende do jeito que funciona pra ti!
+          Feito pra quem aprende diferente. Seu ritmo, seu jeito.
         </p>
         <div className="features-grid">
           {features.map((feature, index) => (
